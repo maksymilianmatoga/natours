@@ -10,6 +10,10 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  @include respond(phone) {
+    overflow: scroll;
+  }
+
   @supports (-webkit-backdrop-filter: blur(10px)) or
     (backdrop-filter: blur(10px)) {
     -webkit-backdrop-filter: blur(10px);
@@ -27,6 +31,11 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s;
+
+    @include respond(phone) {
+      width: 80%;
+      overflow: scroll;
+    }
   }
 
   &__left {
@@ -37,6 +46,7 @@
     @include respond(tab-port) {
       width: 100%;
       display: block;
+      height: 20vh;
     }
   }
 
@@ -50,6 +60,12 @@
       width: 100%;
       display: block;
     }
+
+    @include respond(phone) {
+      padding: 1rem 3rem;
+      overflow: auto;
+      height: 60vh;
+    }
   }
 
   &__img {
@@ -58,9 +74,13 @@
 
     @include respond(tab-port) {
       width: 49.8%;
-      display: inline;
       margin: 0 auto;
       padding: 0;
+    }
+
+    @include respond(phone) {
+      width: 45%;
+      float: left;
     }
   }
 
@@ -82,6 +102,10 @@
 
     @include respond(tab-port) {
       column-count: 1;
+    }
+
+    @include respond(phone) {
+      font-size: 1rem;
     }
   }
 
@@ -109,6 +133,11 @@
       display: inline-block;
       transition: all 0.2s;
       line-height: 1;
+
+      @include respond(phone) {
+        top: 0.75rem;
+        right: 0.75rem;
+      }
     }
 
     &:hover {

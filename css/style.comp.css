@@ -536,6 +536,9 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s; }
+  @media only screen and (max-width: 37.5em) {
+    .popup {
+      overflow: scroll; } }
   @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
     .popup {
       -webkit-backdrop-filter: blur(10px);
@@ -554,6 +557,10 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all 0.5s 0.2s; }
+    @media only screen and (max-width: 37.5em) {
+      .popup__content {
+        width: 80%;
+        overflow: scroll; } }
   .popup__left {
     width: 33.3333333%;
     display: table-cell;
@@ -561,7 +568,8 @@ body {
     @media only screen and (max-width: 56.25em) {
       .popup__left {
         width: 100%;
-        display: block; } }
+        display: block;
+        height: 20vh; } }
   .popup__right {
     width: 66.6666667%;
     display: table-cell;
@@ -571,15 +579,23 @@ body {
       .popup__right {
         width: 100%;
         display: block; } }
+    @media only screen and (max-width: 37.5em) {
+      .popup__right {
+        padding: 1rem 3rem;
+        overflow: auto;
+        height: 60vh; } }
   .popup__img {
     display: block;
     width: 100%; }
     @media only screen and (max-width: 56.25em) {
       .popup__img {
         width: 49.8%;
-        display: inline;
         margin: 0 auto;
         padding: 0; } }
+    @media only screen and (max-width: 37.5em) {
+      .popup__img {
+        width: 45%;
+        float: left; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -596,6 +612,9 @@ body {
     @media only screen and (max-width: 56.25em) {
       .popup__text {
         column-count: 1; } }
+    @media only screen and (max-width: 37.5em) {
+      .popup__text {
+        font-size: 1rem; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -612,6 +631,10 @@ body {
     display: inline-block;
     transition: all 0.2s;
     line-height: 1; }
+    @media only screen and (max-width: 37.5em) {
+      .popup__close:link, .popup__close:visited {
+        top: 0.75rem;
+        right: 0.75rem; } }
   .popup__close:hover {
     color: #55c57a; }
 
